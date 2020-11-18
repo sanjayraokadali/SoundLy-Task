@@ -1,9 +1,6 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Item List Page</title>
-</head>
-<body>
-    <h2>Item List</h2>
-    <a href="{% url 'ecartApp:selecteditempage' %}"> Go To Cart</a>
-</body>
-</html>
+<!DOCTYPE html>
+{% extends 'EcartApp/HomePage.html' %}
+{% block bodyblock %}
+<h2>Item List</h2>
+<a href="{% url 'ecartApp:selecteditempage' %}"> Go To Cart</a>
+{% endblock %}

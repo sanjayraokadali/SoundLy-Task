@@ -1,9 +1,7 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Selected Item List Page</title>
-</head>
-<body>
-    <h2>Selected Items Page</h2>
-    <a href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
-</body>
-</html>
+<!DOCTYPE html>
+{% extends 'EcartApp/HomePage.html' %}
+
+{% block bodyblock %}
+<h2>Selected Items Page</h2>
+<a href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
+{% endblock %}
