@@ -10,16 +10,22 @@
 
 .WelcomeLine{
 
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSjPXT4u5y6_mSSGuhuUJBEvO_-57vzszVwA&usqp=CAU');
-  font-family: 'Yeseva One', cursive;
-  color: rgb(217, 205, 78);
+  background-image: url('https://images.fineartamerica.com/images-medium-large-5/original-bold-colorful-abstract-painting-indecisive-by-madart-megan-duncanson.jpg');
+  text-align: center;
+  border-style: ridge;
+  border-color: rgba(207, 164, 10,0.7);
+  border-width: 10px;
+  font-family: 'Rozha One', serif;
+  color: rgb(0,0,0);
   font-weight: bolder;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
 
 }
 
 .card-bg-color{
   background-color: rgba(215, 217, 108, 0.7);
+  font-family: 'Voltaire', sans-serif;
 
 }
