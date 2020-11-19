@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 {% extends 'ecartApp/HomePage.html' %}
 {% load static %}
-
 {% block bodyblock %}
-  <div class="jumbotron contactusjombu">
-    <h2>Contact Us</h2>
-    <h4>Thank you for visiting our site</h4>
-    <h3>Please feel free to contact us.</h3>
+  <div class="jumbotron">
 
-    <form  method="post">
+    <div class="card text-center">
+  <div class="card-header">
+    <h2>Have a Query?</h2>
+  </div>
+  <div class="card-body">
+
+    <!-- <img src="https://image.shutterstock.com/image-photo/bucharest-romania-may-30-2016-260nw-451195558.jpg" alt=""> -->
+    <div class="media">
+      <img src="data:image/png;base64,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" class="mr-3" alt="...">
+      <div class="media-body">
+        <h4>Contact Us</h4>
+        <h5>At E-cart, we make sure that every customer is happy and satisfied by our services.
+            Our main motto is to service before self and provide exciting offers and deals for our
+            customers
+            <p></p>
+            Please feel free to open up and share a valuable feedback or a query. Drop it in the form below
+            and we will get back to you soon.
+
+        </h5>
+      </div>
+      <p></p>
+    </div>
+      <form  method="post">
       {% csrf_token %}
 
       {{form.as_p}}
-      <button type="submit" name="button">Submit</button>
+      <button type="submit" class="btn btn-danger" name="button">Submit</button>
     </form>
+
+  </div>
+  <div class="media">
+    <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/location_pin.png" class="align-self-start mr-3" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">Get in touch with us!</h5>
+      <h5>
+        Address:<p></p> Seven Sisters, <p></p>London, N15.
+        <p></p>
+        <p></p>
+        Contact: <p></p>07896 543210
+        <p></p> 
+        <p></p> Email: <p></p>Ecart@ecart.com
+        <p></p>
+
+      </h5>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    <h3>Thank You!</h3>
+  </div>
+</div>
+
+
+
 
 
 
