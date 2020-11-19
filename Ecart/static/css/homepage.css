@@ -1,0 +1,25 @@
+.homepage_bgimage{
+  background-image: url('https://i.pinimg.com/originals/6e/e1/dc/6ee1dc8950385d849b823235fdd42313.jpg');
+}
+
+.jumbobgimage{
+  border-top-left-radius: 200px;
+  background-image: url('https://i.pinimg.com/originals/6a/c9/66/6ac9664baf2b1de542b69f29c104c7d6.jpg');
+
+}
+
+.WelcomeLine{
+
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSjPXT4u5y6_mSSGuhuUJBEvO_-57vzszVwA&usqp=CAU');
+  font-family: 'Yeseva One', cursive;
+  color: rgb(217, 205, 78);
+  font-weight: bolder;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+
+}
+
+.card-bg-color{
+  background-color: rgba(215, 217, 108, 0.7);
+
+}
