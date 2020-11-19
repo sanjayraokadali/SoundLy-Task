@@ -3,29 +3,18 @@
 {% load static %}
 
 {% block bodyblock %}
-
   <div class="jumbotron contactusjombu">
-    <h1>Contact Us</h1>
-    <h3>Please feel free to contact us</h3>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">First and last name</span>
-      </div>
-      <input type="text" aria-label="First name" class="form-control">
-      <input type="text" aria-label="Last name" class="form-control">
-    </div>
-    <p></p>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Feedback</span>
-      </div>
-      <textarea class="form-control" aria-label="With textarea"></textarea>
-    </div>
-    <p></p>
+    <h2>Contact Us</h2>
+    <h4>Thank you for visiting our site</h4>
+    <h3>Please feel free to contact us.</h3>
 
-    <button type="button" class="btn btn-outline-info">Submit</button>
+    <form class="" action="{% url 'homepage' %}" method="post">
+      {% csrf_token %}
 
-    </div>
+      {{form.as_p}}
+      <button type="submit" name="button">Submit</button>
+    </form>
+
 
 
   </div>

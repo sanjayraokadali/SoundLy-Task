@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from ecartApp import forms
 
 # Create your views here.
 def HomePage(request):
@@ -24,7 +24,21 @@ def AboutPage(request):
 
 def ContactPage(request):
 
-    return render(request,'ecartApp/ContactPage.html')
+    form = forms.FormName()
+
+    if request.method == 'POST':
+
+        form = forms.FormName(request.POST)
+
+        print('in this function')
+
+        if form.is_valid():
+
+            print('NAME' + form.cleaned_data['Name'])
+            print('Email' + form.cleaned_data['Email'])
+            print('Query' + form.cleaned_data['Query'])
+
+    return render(request,'ecartApp/ContactPage.html',{'form':form})
 
 def ProductGallery(request):
 

@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.HomePage,name='homepage'),
     url(r'^/',include('ecartApp.urls')),
+    
 ]
