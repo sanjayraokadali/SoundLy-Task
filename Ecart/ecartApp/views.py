@@ -10,9 +10,17 @@ def ItemListPage(request):
 
     return render(request,'ecartApp/ItemListPage.html')
 
+def UserLoginPage(request):
+
+    return render(request,'ecartApp/UserLoginPage.html')
+
 def PaymentPage(request):
 
     return render(request,'ecartApp/PaymentPage.html')
+
+def AboutPage(request):
+
+    return render(request,'ecartApp/AboutPage.html')
 
 def SelectedItemPage(request):
 

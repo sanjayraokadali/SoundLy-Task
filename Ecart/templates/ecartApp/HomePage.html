@@ -2,42 +2,105 @@
 <head>
     <title>Ecart</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'homepage' %}">Ecart Shopping website</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Product Gallery <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Features</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Item List <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Pricing</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'ecartApp:aboutpage' %}">About Us<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle btn btn-danger btn-md" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Login
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="{% url 'ecartApp:userloginpage' %}">Login to your Account</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Register</a>
+      </div>
+    </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Contact Us <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
 </nav>
+  <div class="container">
+
+
+
+  {% block bodyblock %}
   <div class="jumbotron">
-  <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  <h1 class="display-4">Welcome to Ecart. Shop With A Snap! </h1>
 
-      <a href="{% url 'ecartApp:itemlistpage' %}">Item List</a>
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+</ol>
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <img src="https://wallpaperaccess.com/full/1496231.jpg" class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
 
-      {% block bodyblock %}
+      <h2>Tired Of the Load?</h2>
 
-      {% endblock %}
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="https://www.wallpaper.ge/download/go_shopping-1920x1080.jpg" class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h2>Puzzled where to Search?</h2>
+    </div>
+  </div>
+  <div class="carousel-item">
+    <img src="https://cdn.techinasia.com/wp-content/uploads/2015/07/online-shopping-ecommerce-ss-1920.png" class="d-block w-100" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+      <h2>Ecart is Here to help you out!</h2>
+  </div>
 </div>
+<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+</div>
+
+  <hr class="my-4">
+  <h3>
+    <!-- Pending adding Fonts and motion of mouse -->
+    Unlike other e-commerce websites, Ecart brings you Amazing offers on
+    trending and high end products. The cart is not just a cart, but a bundle
+    of fantastic deals and vouchers. The Ecart analyses your shopping pattern and
+    brings you amazing discounts on your next purchase.
+
+  </h3>
+  <h4>Want to explore more about us? You are one click away!</h4>
+  <a class="btn btn-outline-dark btn-lg" href="{% url 'ecartApp:aboutpage' %}" role="button">Explore!</a>
+  <p></p>
+      <a class="btn btn-primary btn-lg" href="{% url 'ecartApp:itemlistpage' %}">Item List</a>
+
+
+</div>
+</div>
+  {% endblock %}
+
 </body>
 </html>
