@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from ecartApp import forms
+from ecartApp.forms import QueryModelForm
 
 # Create your views here.
 def HomePage(request):
@@ -24,19 +25,18 @@ def AboutPage(request):
 
 def ContactPage(request):
 
-    form = forms.FormName()
+    form = QueryModelForm()
 
     if request.method == 'POST':
 
-        form = forms.FormName(request.POST)
-
-        print('in this function')
+        form = QueryModelForm(request.POST)
 
         if form.is_valid():
 
-            print('NAME' + form.cleaned_data['Name'])
-            print('Email' + form.cleaned_data['Email'])
-            print('Query' + form.cleaned_data['Query'])
+            form.save(commit=True)
+            return HomePage(request)
+        else:
+            print('Error!')
 
     return render(request,'ecartApp/ContactPage.html',{'form':form})
 

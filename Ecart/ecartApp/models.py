@@ -29,3 +29,14 @@ class AccessRecord(models.Model):
     def __str__(self):
 
         return str(self.date)
+
+class QueryModel(models.Model):
+
+    name = models.CharField(max_length=264)
+    email = models.EmailField()
+    number = models.IntegerField()
+    query = models.TextField(max_length=260)
+
+    def __str__(self):
+
+        return self.name
