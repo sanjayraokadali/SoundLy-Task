@@ -7,7 +7,7 @@
 </head>
 <body>
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'homepage' %}">Ecart Shopping website</a>
+  <a class="navbar-brand" href="{% url 'homepage' %}">Ecart Shopping Hub</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -83,22 +83,20 @@
 </a>
 </div>
 
-  <hr class="my-4">
-  <h3>
-    <!-- Pending adding Fonts and motion of mouse -->
-    Unlike other e-commerce websites, Ecart brings you Amazing offers on
-    trending and high end products. The cart is not just a cart, but a bundle
-    of fantastic deals and vouchers. The Ecart analyses your shopping pattern and
-    brings you amazing discounts on your next purchase.
-
-  </h3>
-  <h4>Want to explore more about us? You are one click away!</h4>
-  <a class="btn btn-outline-dark btn-lg" href="{% url 'ecartApp:aboutpage' %}" role="button">Explore!</a>
-  <p></p>
-      <a class="btn btn-primary btn-lg" href="{% url 'ecartApp:itemlistpage' %}">Item List</a>
-
-
 </div>
+<hr class="my-4">
+<h3>
+  <!-- Pending adding Fonts and motion of mouse -->
+  Unlike other e-commerce websites, Ecart brings you Amazing offers on
+  trending and high end products. The cart is not just a cart, but a bundle
+  of fantastic deals and vouchers. The Ecart analyses your shopping pattern and
+  brings you amazing discounts on your next purchase.
+
+</h3>
+<h4>Want to explore more about us? You are one click away!</h4>
+<a class="btn btn-outline-dark btn-lg" href="{% url 'ecartApp:aboutpage' %}" role="button">Explore!</a>
+<p></p>
+    <a class="btn btn-primary btn-lg" href="{% url 'ecartApp:itemlistpage' %}">Item List</a>
 </div>
   {% endblock %}
 
