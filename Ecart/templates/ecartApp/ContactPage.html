@@ -3,9 +3,27 @@
 {% load static %}
 
 {% block bodyblock %}
+
   <div class="jumbotron contactusjombu">
     <h1>Contact Us</h1>
+    <h3>Please feel free to contact us</h3>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">First and last name</span>
+      </div>
+      <input type="text" aria-label="First name" class="form-control">
+      <input type="text" aria-label="Last name" class="form-control">
+    </div>
+    <p></p>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Feedback</span>
+      </div>
+      <textarea class="form-control" aria-label="With textarea"></textarea>
+    </div>
+    <p></p>
 
+    <button type="button" class="btn btn-outline-info">Submit</button>
 
     </div>
 

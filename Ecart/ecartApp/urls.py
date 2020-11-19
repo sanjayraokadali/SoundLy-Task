@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^ItemListPage/$',views.ItemListPage,name='itemlistpage'),
     url(r'^ContactPage/$',views.ContactPage,name='contactpage'),
     url(r'^PaymentPage/$',views.PaymentPage,name='paymentpage'),
+    url(r'^ProductGallery/$',views.ProductGallery,name='productgallery'),
     url(r'^PaymentPage/TotalBillPage/ThankYouPage/$',views.ThankYouPage,name='thankyoupage'),
     url(r'^ItemListPage/SelectedItemPage/$',views.SelectedItemPage,name='selecteditempage'),
     url(r'^PaymentPage/TotalBillPage/$',views.TotalBillPage,name='totalbillpage'),

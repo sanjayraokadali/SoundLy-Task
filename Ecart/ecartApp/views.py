@@ -26,6 +26,10 @@ def ContactPage(request):
 
     return render(request,'ecartApp/ContactPage.html')
 
+def ProductGallery(request):
+
+    return render(request,'ecartApp/ProductGallery.html')
+
 def SelectedItemPage(request):
 
     return render(request,"ecartApp/SelectedItemPage.html")
