@@ -8,6 +8,7 @@ urlpatterns = [
     # url(r'$%',views.HomePage,name='homepage'),
     url(r'^AboutPage/$',views.AboutPage,name='aboutpage'),
     url(r'^ItemListPage/$',views.ItemListPage,name='itemlistpage'),
+    url(r'^ContactPage/$',views.ContactPage,name='contactpage'),
     url(r'^PaymentPage/$',views.PaymentPage,name='paymentpage'),
     url(r'^PaymentPage/TotalBillPage/ThankYouPage/$',views.ThankYouPage,name='thankyoupage'),
     url(r'^ItemListPage/SelectedItemPage/$',views.SelectedItemPage,name='selecteditempage'),

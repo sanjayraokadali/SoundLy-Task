@@ -22,6 +22,10 @@ def AboutPage(request):
 
     return render(request,'ecartApp/AboutPage.html')
 
+def ContactPage(request):
+
+    return render(request,'ecartApp/ContactPage.html')
+
 def SelectedItemPage(request):
 
     return render(request,"ecartApp/SelectedItemPage.html")
@@ -40,4 +44,4 @@ def UserLoginPage(request):
 
 def UserRegistrationPage(request):
 
-    return render(request,"ecartApp/UserRegiostrationPage.html")
+    return render(request,"ecartApp/UserRegistrationPage.html")
