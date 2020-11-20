@@ -20,9 +20,9 @@ class QueryModelForm(forms.ModelForm):
 
 class UserRegistrationModelForm(forms.ModelForm):
 
-    password = forms.CharField(widget = forms.PasswordInput)
+    password = forms.CharField(widget = forms.PasswordInput())
     class Meta:
 
-        model = UserRegistrationModel
+        model = User
 
-        fields = '__all__'
+        fields = ('username','first_name','last_name','email','password')

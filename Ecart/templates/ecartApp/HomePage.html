@@ -67,16 +67,24 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'ecartApp:aboutpage' %}">About Us<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle btn btn-outline-dark btn-md" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Login
-      </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="{% url 'ecartApp:userloginpage' %}">Login to your Account</a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="{% url 'ecartApp:userregistrationpage' %}">Register</a>
-      </div>
-    </li>
+
+      {% if user.is_authenticated %}
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'logout' %}">Log Out<span class="sr-only">(current)</span></a>
+      </li>
+      {% else %}
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle btn btn-outline-dark btn-md" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Login
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'ecartApp:userloginpage' %}">Login to your Account</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'ecartApp:userregistrationpage' %}">Register</a>
+          </div>
+        </li>
+      {% endif %}
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'ecartApp:contactpage' %}">Contact Us <span class="sr-only">(current)</span></a>
       </li>

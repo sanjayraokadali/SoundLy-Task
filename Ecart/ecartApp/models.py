@@ -1,5 +1,6 @@
 from django.db import models
 
+from django.contrib.auth.models import User
 
 # Create your models here.
 class QueryModel(models.Model):
@@ -29,12 +30,10 @@ class GenerateItem(models.Model):
 
 class UserRegistrationModel(models.Model):
 
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    mobile_number = models.IntegerField()
-    email = models.EmailField()
+    user = models.OneToOneField(User, on_delete= models.CASCADE)
+
     password = models.CharField(max_length=30)
 
     def __str__(self):
 
-        return self.first_name
+        return self.user.username
