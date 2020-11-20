@@ -26,3 +26,15 @@ class GenerateItem(models.Model):
     def __str__(self):
 
         return self.item_name
+
+class UserRegistrationModel(models.Model):
+
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    mobile_number = models.IntegerField()
+    email = models.EmailField()
+    password = models.CharField(max_length=30)
+
+    def __str__(self):
+
+        return self.first_name

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from ecartApp import forms
 from ecartApp.forms import QueryModelForm
 from ecartApp.models import GenerateItem
+from ecartApp.forms import UserRegistrationModelForm
 
 # Create your views here.
 def HomePage(request):
@@ -14,9 +15,6 @@ def ItemListPage(request):
 
     return render(request,'ecartApp/ItemListPage.html',{'item':item})
 
-def UserLoginPage(request):
-
-    return render(request,'ecartApp/UserLoginPage.html')
 
 def PaymentPage(request):
 
@@ -65,4 +63,17 @@ def UserLoginPage(request):
 
 def UserRegistrationPage(request):
 
-    return render(request,"ecartApp/UserRegistrationPage.html")
+    form = UserRegistrationModelForm()
+
+    if request.method == 'POST':
+
+        form = UserRegistrationModelForm(request.POST)
+
+        if form.is_valid():
+
+            form.save(commit=True)
+            return HomePage(request)
+        else:
+            print('error')
+
+    return render(request,"ecartApp/UserRegistrationPage.html",{'form':form})

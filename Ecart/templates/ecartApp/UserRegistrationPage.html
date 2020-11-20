@@ -3,31 +3,13 @@
 
 {% block bodyblock %}
 <div class="jumbotron ">
-  <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">First Name</label>
-    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Last Name</label>
-    <input type="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">mobile Number</label>
-    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email ID</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
 
-  <button type="submit" class="btn btn-primary">Register</button>
-</form>
+  <form class="jumbotron" method="post">
+    {% csrf_token %}
 
+    {{ form.as_p}}
+    <input type="submit" name="" class="btn btn-light" value="Register">
+  </form>
 </div>
 
 {% endblock %}
