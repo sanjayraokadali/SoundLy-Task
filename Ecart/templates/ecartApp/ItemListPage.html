@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% extends 'ecartApp/HomePage.html' %}
+{% load static %}
+
+{% block bodyblock %}
+
+
+  <div class="jumbotron">
+    {% for i in item %}
+      <p>{{i.item_name}}</p>
+      <br>
+      <p>{{i.item_price}}</p>
+      <br>
+      <p>{{i.item_url}}</p>
+      <br>
+
+    {% endfor %}
+  </div>
+
+{% endblock %}
