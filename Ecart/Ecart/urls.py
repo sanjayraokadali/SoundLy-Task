@@ -22,6 +22,6 @@ from ecartApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.HomePage,name='homepage'),
-    url(r'^/',include('ecartApp.urls')),
-    
+    url(r'^Homepage/',include('ecartApp.urls')),
+
 ]

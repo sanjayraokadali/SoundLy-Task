@@ -1,5 +1,7 @@
 from django import forms
 from ecartApp.models import QueryModel
+from django.contrib.auth.models import User
+from ecartApp.models import GenerateItem
 
 class FormName(forms.Form):
 

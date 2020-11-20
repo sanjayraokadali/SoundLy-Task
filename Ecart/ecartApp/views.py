@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from ecartApp import forms
 from ecartApp.forms import QueryModelForm
+from ecartApp.models import GenerateItem
 
 # Create your views here.
 def HomePage(request):
@@ -9,7 +10,9 @@ def HomePage(request):
 
 def ItemListPage(request):
 
-    return render(request,'ecartApp/ItemListPage.html')
+    item = GenerateItem.objects.all()
+
+    return render(request,'ecartApp/ItemListPage.html',{'item':item})
 
 def UserLoginPage(request):
 
