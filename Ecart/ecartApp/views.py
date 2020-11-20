@@ -71,7 +71,7 @@ def UserLoginPage(request):
 
         user = authenticate(email=email,password=password)
 
-        if user is not None:
+        if user:
             login(request,user)
             return HomePage(request)
         else:
@@ -94,6 +94,9 @@ def UserRegistrationPage(request):
 
         if form.is_valid():
 
+            user = form.save()
+            user.set_password(user.password)
+            user.save()
             form.save(commit=True)
             return HttpResponseRedirect(reverse('homepage'))
         else:

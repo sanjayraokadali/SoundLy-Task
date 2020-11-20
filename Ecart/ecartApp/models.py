@@ -32,6 +32,8 @@ class UserRegistrationModel(models.Model):
 
     user = models.OneToOneField(User, on_delete= models.CASCADE)
 
+    username = models.CharField(max_length=30)
+
     password = models.CharField(max_length=30)
 
     def __str__(self):
