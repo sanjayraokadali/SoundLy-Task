@@ -5,6 +5,7 @@ from ecartApp.forms import UserForm
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
+from ecartApp.models import GenerateItem
 
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
