@@ -23,6 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.HomePage,name='homepage'),
     url(r'^Homepage/',include('ecartApp.urls')),
-    url(r'^logout/$',views.user_logout,name='logout'),
 
 ]

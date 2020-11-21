@@ -1,14 +1,8 @@
 from django import forms
 from ecartApp.models import QueryModel
 from django.contrib.auth.models import User
-from ecartApp.models import GenerateItem
-from ecartApp.models import UserRegistrationModel
 
-class FormName(forms.Form):
 
-    Name = forms.CharField()
-    Email = forms.EmailField()
-    Query = forms.CharField(widget=forms.Textarea)
 
 class QueryModelForm(forms.ModelForm):
 
@@ -18,11 +12,11 @@ class QueryModelForm(forms.ModelForm):
 
         fields = '__all__'
 
-class UserRegistrationModelForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
 
-    password = forms.CharField(widget = forms.PasswordInput())
     class Meta:
 
         model = User
 
-        fields = ('username','first_name','last_name','email','password')
+        password = forms.CharField(max_length=30, widget = forms.PasswordInput())
+        fields = ('username','email','password')

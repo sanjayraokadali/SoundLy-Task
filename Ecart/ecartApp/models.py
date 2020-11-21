@@ -2,6 +2,8 @@ from django.db import models
 
 from django.contrib.auth.models import User
 
+
+
 # Create your models here.
 class QueryModel(models.Model):
 
@@ -27,15 +29,3 @@ class GenerateItem(models.Model):
     def __str__(self):
 
         return self.item_name
-
-class UserRegistrationModel(models.Model):
-
-    user = models.OneToOneField(User, on_delete= models.CASCADE)
-
-    username = models.CharField(max_length=30)
-
-    password = models.CharField(max_length=30)
-
-    def __str__(self):
-
-        return self.user.username
