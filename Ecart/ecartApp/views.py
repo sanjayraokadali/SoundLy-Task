@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 
+from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 def HomePage(request):
 
@@ -60,9 +63,29 @@ def TotalBillPage(request):
 
 def UserLoginPage(request):
 
-    return render(request,"ecartApp/UserLoginPage.html")
+    if request.method == 'POST':
+
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user = authenticate(email = email, password = password)
+
+        if user:
+
+            login(request,user)
+
+            return HttpResponseRedirect(reverse('homepage'))
+        else:
+
+            return HttpResponse('Invalid Details')
+    else:
+
+        return render(request,"ecartApp/UserLoginPage.html",{})
+
 
 def UserRegistrationPage(request):
+
+    registered = False
 
     form = UserForm()
 
@@ -76,7 +99,15 @@ def UserRegistrationPage(request):
 
             user.set_password(user.password)
 
-            user.save(commit=True)
+            user.save()
             return HomePage(request)
+            registered = True
 
-    return render(request,"ecartApp/UserRegistrationPage.html",{'form':form})
+    return render(request,"ecartApp/UserRegistrationPage.html",{'form':form,'registered':registered})
+
+@login_required
+def user_logout(request):
+
+    logout(request)
+
+    return HttpResponseRedirect(reverse('homepage'))
