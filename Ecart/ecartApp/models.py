@@ -14,7 +14,7 @@ class QueryModel(models.Model):
 
     def __str__(self):
 
-        return self.name
+        return self.query
 
 class GenerateItem(models.Model):
 
