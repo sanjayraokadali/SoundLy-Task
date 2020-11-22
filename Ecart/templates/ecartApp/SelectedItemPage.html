@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% extends 'EcartApp/HomePage.html' %}
+{% load static %}
 
 {% block bodyblock %}
 
@@ -16,7 +17,7 @@
             <h6 class="card-title">Price : £{{ i.item_price }} : <p class="product_quantity">Quantity: {{ i.item_quantity }}</p></h6>
 
 
-            <input type="submit" class="btn btn-danger" name='' value="Remove From List">
+            <input type="submit" class=" remove_item btn btn-danger" name='' value="Remove From List">
           </div>
         </div>
 
@@ -49,6 +50,6 @@
     <a href="{% url 'ecartApp:itemlistpage' %}" class="btn btn-outline-info bg-light text-dark">Shop More!</a>
     <a class="btn btn-outline-success bg-light text-dark" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
 
-
   </div>
+  
 {% endblock %}

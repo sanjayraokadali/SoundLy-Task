@@ -7,16 +7,19 @@
   <div class="jumbotron">
     <div class="container">
       <h2>Payment Page</h2>
-      <a href="{% url 'ecartApp:thankyoupage' %}" class="btn btn-outline-success">Pay</a>
+      <a href="{% url 'ecartApp:thankyoupage' %}" class="btn btn-outline-success total_to_pay">Pay</a>
     </div>
 
+  </div>
+  <script type="text/javascript">
+    var b = $('.total_to_pay');
 
+    b.click(function(){
 
+      alert('PAYMENT SUCCESSFUL!')
 
-
-
+    })
+  </script>
 
 
 {% endblock %}
-
-  </div>
