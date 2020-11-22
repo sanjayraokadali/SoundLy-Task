@@ -26,7 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$',views.HomePage,name='homepage'),
     url(r'^Homepage/',include('ecartApp.urls')),
-    url(r'^Logout/',views.user_logout,name='logout')
+    url(r'^Logout/',views.user_logout,name='logout'),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

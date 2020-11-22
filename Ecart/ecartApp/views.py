@@ -5,7 +5,7 @@ from ecartApp.forms import UserForm
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
-from ecartApp.models import GenerateItem,Cart
+from ecartApp.models import GenerateItem
 
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -46,6 +46,7 @@ def ContactPage(request):
 
     return render(request,'ecartApp/ContactPage.html',{'form':form})
 
+
 def ProductGallery(request):
 
     return render(request,'ecartApp/ProductGallery.html')
@@ -66,19 +67,19 @@ def UserLoginPage(request):
 
     if request.method == 'POST':
 
-        email = request.POST['email']
-        password = request.POST['password']
+        username = request.POST.get('username')
+        password = request.POST.get('password')
 
-        user = authenticate(email = email, password = password)
+        user = authenticate(username = username, password = password)
 
         if user:
-
+            print('True')
             login(request,user)
 
             return HttpResponseRedirect(reverse('homepage'))
         else:
+            print('False')
             return HttpResponse('Invalid Details')
-            print('{} {} not found'.format(email,password))
     else:
 
         return render(request,"ecartApp/UserLoginPage.html",{})

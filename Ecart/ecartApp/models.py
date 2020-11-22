@@ -31,9 +31,3 @@ class GenerateItem(models.Model):
     def __str__(self):
 
         return self.item_name
-
-class Cart(GenerateItem):
-
-    def __str__(self):
-
-        return self.item_name
