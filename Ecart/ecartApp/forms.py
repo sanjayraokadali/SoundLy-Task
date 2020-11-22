@@ -14,8 +14,11 @@ class QueryModelForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
 
+    password = forms.CharField(widget = forms.PasswordInput)
+
     class Meta:
 
         model = User
-        password = forms.CharField(max_length=30, widget = forms.PasswordInput)
+
+
         fields = ('username','email','first_name','last_name','password')
