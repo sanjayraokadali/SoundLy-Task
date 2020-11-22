@@ -10,17 +10,59 @@
   <div class="card-body">
     <h4 class="card-title">E-cart, We study your buyings!</h4>
     <h5 class="card-text">
-      E-cart is quite diffrent from other e-commerce websites as we aim to not only
+      E-cart is quite different from other e-commercial websites as we aim to not only
       deliver excellent customer services, but we also aim to benefit your shopping
       by studying your purchase patterns. This pattern is studied for every user and
       ultimately helps us to provide vouchers or discounts on those products that are
       oftenly bought by a user.
 
-    </h5>
 
+    <br><br><br>
+    The Organisation is well bonded with the sponsors and media partners who believe in reaching
+    out to the customers who shop oftenly. The service that we intend to give is to motivate our consumers
+    to shop daily with a surity to get discounts on the products they consume very often. It could be an
+    eatable or dress items, who follow trending fashion and styling.
+
+    </h5>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Product Gallery</h5>
+              <h6 class="card-text">Visit Our Product Gallery and get amazed with the products we have!</h6>
+              <a href="{% url 'ecartApp:productgallery' %}" class="btn btn-outline-dark">Product Gallery</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Item List</h5>
+              <h6 class="card-text">Surf the Items that are available for sale!</h6>
+              <a href="{% url 'ecartApp:itemlistpage' %}" class="btn btn-outline-dark">Item List</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Contact Us</h5>
+              <h6 class="card-text">Feel free to post your query/feedback! <br> We value it the most for making you smile! </h6>
+              <a href="{% url 'ecartApp:contactpage' %}" class="btn btn-outline-dark">Contact Us</a>
+          </div>
   </div>
-</div>
+        </div>
+      </div>
+      </div>
+
+
+
+
+    </div>
   </div>
+    </div>
 
 
 {% endblock %}
