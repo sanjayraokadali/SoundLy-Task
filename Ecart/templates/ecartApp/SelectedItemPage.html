@@ -2,6 +2,10 @@
 {% extends 'EcartApp/HomePage.html' %}
 
 {% block bodyblock %}
-<h2>Selected Items Page</h2>
-<a href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
+
+  <div class="jumbotron">
+    <h2>Selected Items Page</h2>
+    <a class="btn btn-outline-danger" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
+
+  </div>
 {% endblock %}

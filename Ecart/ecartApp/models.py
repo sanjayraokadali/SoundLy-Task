@@ -26,6 +26,14 @@ class GenerateItem(models.Model):
 
     item_url = models.URLField(blank=False)
 
+    item_description = models.TextField()
+
+    def __str__(self):
+
+        return self.item_name
+
+class Cart(GenerateItem):
+
     def __str__(self):
 
         return self.item_name

@@ -72,6 +72,11 @@
       </li>
       {% if user.is_authenticated %}
       <li class="nav-item active">
+        <a class="nav-link" href="{% url 'ecartApp:selecteditempage' %}">Go To Cart <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item active">
         <a class="nav-link" href="{% url 'logout' %}">Logout <span class="sr-only">(current)</span></a>
       </li>
       {% else %}
