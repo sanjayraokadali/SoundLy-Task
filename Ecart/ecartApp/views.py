@@ -30,22 +30,23 @@ def ItemListPage(request):
 
 
 
-        if Cart.objects.count() == 0:
-
+        if (Cart.objects.count() == 0):
+            print('loop 1')
             cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity)
+            cart.save()
 
-        elif item_name == Cart.objects.get(item_name = item_name):
-
-            cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity + 1)
-            
         else:
+            if Cart.objects.filter(item_name = item_name).exists():
 
-            cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity)
+                cart = Cart.objects.get(item_name = item_name)
+                cart.item_quantity += 1
+                cart.save()
 
 
-        cart.save()
+            else:
+                cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity)
+                cart.save()
 
-        print('{} : {}'.format(item_name,item_price))
 
         return HttpResponseRedirect(reverse('ecartApp:selecteditempage'))
 
