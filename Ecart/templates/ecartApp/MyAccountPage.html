@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% extends 'ecartApp/HomePage.html' %}
+{% load static %}
+
+{% block bodyblock %}
+
+  <div class="jumbotron">
+
+    <div class="container">
+
+        {% if user.is_authenticated %}
+          <h3>Hi {{ user.first_name }}!!</h3>
+          <br>
+          <h4>Welcome to E-Cart</h4>
+          <br>
+          <h5>Your Account Details are:</h5>
+          <br>
+          <h6>First Name: {{ user.first_name }}</h6>
+          <br>
+          <h6>Last Name: {{ user.last_name }}</h6>
+          <br>
+          <h6>Email ID: {{ user.email }}</h6>
+
+          <a href="{% url 'homepage' %}" class="btn btn-outline-success">Go Back Home!</a>
+          <a href="{% url 'ecartApp:aboutpage' %}" class="btn btn-outline-dark bg-light">About Us</a>
+
+        {% endif %}
+
+    </div>
+
+  </div>
+
+{% endblock %}

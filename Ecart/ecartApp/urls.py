@@ -16,5 +16,6 @@ urlpatterns = [
     url(r'^PaymentPage/TotalBillPage/$',views.TotalBillPage,name='totalbillpage'),
     url(r'^UserLoginPage/$',views.UserLoginPage,name='userloginpage'),
     url(r'^UserRegistrationPage/$',views.UserRegistrationPage,name='userregistrationpage'),
+    url(r'^UserLoginPage/MyAccountPage/$',views.MyAccountPage,name='myaccountpage'),
 
     ]

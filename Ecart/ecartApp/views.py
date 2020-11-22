@@ -113,3 +113,7 @@ def user_logout(request):
     logout(request)
 
     return HttpResponseRedirect(reverse('homepage'))
+
+def MyAccountPage(request):
+
+    return render(request,'ecartApp/MyAccountPage.html')
