@@ -7,8 +7,6 @@
 
   <div class="jumbotron">
 
-
-
       {% for i in item %}
         <form  method="POST">
           {% csrf_token %}
@@ -25,7 +23,7 @@
                 <input type="hidden" name="product_price" value="{{ i.item_price }}">
                 <h6 class="card-text product_description">{{ i.item_description }}</h6>
                   <a href="{{ i.item_url }}" target="_blank" class="btn btn-outline-info">Check Out the Product</a>
-                    <input type="submit" class="btn btn-outline-dark bg-info" name="" value="Add to cart">
+                    <input type="submit" class="btn btn-outline-dark bg-info" name="add" value="Add to cart">
               </div>
             </div>
           </div>

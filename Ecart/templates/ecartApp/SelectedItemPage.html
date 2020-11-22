@@ -4,12 +4,51 @@
 {% block bodyblock %}
 
   <div class="jumbotron">
-    <h2>Selected Items Page</h2>
-    <h3>Product List</h3>
+        <h2>My Cart</h2>
+    {% if cart.count != 0 %}
     {% for i in cart %}
-      <p> {{ i.item_name }}</p><br> <p> {{ i.item_price }} </p>
+      <form  method="POST">
+        {% csrf_token %}
+        <div class="card text-dark bg-light mb-3" style="max-width: 50rem;">
+          <div class="card-header"> <h5> Product Name:  {{ i.item_name }} </h5> </div>
+          <input type="hidden" name="product_name" value="{{ i.item_name }}">
+          <div class="card-body">
+            <h6 class="card-title">Price : £{{ i.item_price }} : <p class="product_quantity">Quantity: {{ i.item_quantity }}</p></h6>
+            <button type="button" name="add_{{ i.item_name }}">Add Quantity</button>
+
+            <input type="submit" class="btn btn-danger" name='' value="Remove From List">
+          </div>
+        </div>
+
+      </form>
+
     {% endfor %}
-    <a class="btn btn-outline-danger" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
+
+    {% else %}
+      <div class="container" style=" align-items: center; ">
+        <div class="alert alert-info" role="alert" >
+
+          <div class="card" style="width: 25rem;">
+            <img src="https://cdn.dribbble.com/users/204955/screenshots/4930541/emptycart.png?compress=1&resize=400x300" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h4 class="card-text">Empty Cart?</h4>
+                <h5>Visit our Products list...  <br> <br> Add a Product... <br> <br> Fill your Cart!</h5><br> <br>
+                <h6>Thank You!</h6>
+            </div>
+          </div>
+
+      </div>
+      </div>
+
+
+
+
+    {% endif %}
+
+
+    <a href="{% url 'ecartApp:itemlistpage' %}" class="btn btn-outline-info bg-light text-dark">Shop More!</a>
+    <a class="btn btn-outline-success bg-light text-dark" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
+
 
   </div>
 {% endblock %}

@@ -31,4 +31,4 @@ class CartForm(forms.ModelForm):
 
         model = Cart
 
-        fields = ('item_name','item_price')
+        fields = '__all__'

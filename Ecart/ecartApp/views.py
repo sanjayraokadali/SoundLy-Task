@@ -23,10 +23,25 @@ def ItemListPage(request):
 
     if request.method == 'POST':
 
+        cart = Cart.objects.all()
         item_name = request.POST.get('product_name')
         item_price = request.POST.get('product_price')
+        item_quantity = 1
 
-        cart = Cart(item_name = item_name, item_price = item_price)
+
+
+        if Cart.objects.count() == 0:
+
+            cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity)
+
+        elif item_name == Cart.objects.get(item_name = item_name):
+
+            cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity + 1)
+            
+        else:
+
+            cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity)
+
 
         cart.save()
 
@@ -70,6 +85,16 @@ def ProductGallery(request):
 def SelectedItemPage(request):
 
     cart = Cart.objects.all()
+
+    if request.method == 'POST':
+
+        item_name = request.POST.get('product_name')
+
+        Cart.objects.get(item_name = item_name).delete()
+
+
+        return HttpResponseRedirect(reverse('ecartApp:selecteditempage'))
+
 
     return render(request,"ecartApp/SelectedItemPage.html",{'cart':cart})
 
@@ -127,6 +152,10 @@ def UserRegistrationPage(request):
 
 @login_required
 def user_logout(request):
+
+    cart = Cart.objects.all()
+
+    cart.delete()
 
     logout(request)
 
