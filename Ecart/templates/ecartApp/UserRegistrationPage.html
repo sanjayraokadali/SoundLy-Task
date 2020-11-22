@@ -2,14 +2,36 @@
 {% extends 'EcartApp/HomePage.html' %}
 
 {% block bodyblock %}
-<div class="jumbotron ">
 
-  <form class="jumbotron" method="post">
-    {% csrf_token %}
 
-    {{ form.as_p}}
-    <input type="submit" name="" class="btn btn-light" value="Register">
-  </form>
+<form method="post">
+  {% csrf_token %}
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Hi There! Welcome to E-Cart!</h1>
+    <h3 class="lead">Register to E-Cart to find some exciting deals over trending products</h3>
+
+    <div class="card text-white bg-dark mb-3" style="max-width: 80rem;">
+      <div class="card-header">WELCOME</div>
+      <div class="card-body">
+        <h5 class="card-title">Register Here!</h5>
+        <p class="card-text">
+          {{ form.as_p}}
+
+        </p>
+        <input type="submit" name="" class="btn btn-outline-info bg-dark" value="Register">
+      </div>
+    </div>
+
+
+
+
+
+  </div>
 </div>
+</form>
+
+
+
 
 {% endblock %}
