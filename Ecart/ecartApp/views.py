@@ -29,7 +29,6 @@ def ItemListPage(request):
         item_quantity = 1
 
 
-
         if (Cart.objects.count() == 0):
             print('loop 1')
             cart = Cart(item_name = item_name, item_price = item_price, item_quantity = item_quantity)
@@ -105,7 +104,16 @@ def ThankYouPage(request):
 
 def TotalBillPage(request):
 
-    return render(request,'ecartApp/TotalBillPage.html')
+    cart = Cart.objects.all()
+    sum = 0
+
+
+    for price in cart:
+
+        sum += float(price.item_price) * price.item_quantity
+
+
+    return render(request,'ecartApp/TotalBillPage.html',{'cart':cart,'total':sum})
 
 def UserLoginPage(request):
 

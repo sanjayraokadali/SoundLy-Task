@@ -35,6 +35,7 @@ class GenerateItem(models.Model):
 class Cart(models.Model):
 
     item_name = models.CharField(max_length=30)
+
     item_price = models.CharField(max_length=10)
     item_quantity = models.IntegerField()
 

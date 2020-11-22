@@ -2,6 +2,42 @@
 {% extends 'EcartApp/HomePage.html' %}
 
 {% block bodyblock %}
-<h2>Total Bill Page</h2>
-<a href="{% url 'ecartApp:paymentpage' %}">Place Order</a>
+
+
+  <div class="container">
+    <div class="jumbotron">
+      <h2>Total Bill Page</h2>
+        {% for i in cart %}
+
+      <ul class="list-group">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <h4>
+              <strong> {{ i.item_name }}</strong>
+
+             </h4>
+
+            <h4>
+              <span class="badge badge-dark badge-pill">Price: £{{ i.item_price }} x Quantity : {{ i.item_quantity }}</span>
+              <br>
+
+            </h4>
+
+
+          </li>
+      </ul>
+
+
+
+
+        {% endfor %}
+
+    <h3>  <span class="badge badge-dark badge-pill"> Grand Total: £{{total}} </span></h3>
+
+    <a href="{% url 'ecartApp:paymentpage' %}" class="btn btn-info">Place Order</a>
+    </div>
+
+  </div>
+
+
+
 {% endblock %}
