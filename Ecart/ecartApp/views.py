@@ -47,12 +47,17 @@ def ItemListPage(request):
                 cart.save()
 
 
-        return HttpResponseRedirect(reverse('ecartApp:selecteditempage'))
+        return HttpResponseRedirect(reverse('ecartApp:itemlistpage'))
 
 
     return render(request,'ecartApp/ItemListPage.html',{'item':item})
 
+@login_required
 def PaymentPage(request):
+
+    cart = Cart.objects.all()
+
+    cart.delete()
 
     return render(request,'ecartApp/PaymentPage.html')
 
@@ -111,6 +116,8 @@ def TotalBillPage(request):
     for price in cart:
 
         sum += float(price.item_price) * price.item_quantity
+
+
 
 
     return render(request,'ecartApp/TotalBillPage.html',{'cart':cart,'total':sum})

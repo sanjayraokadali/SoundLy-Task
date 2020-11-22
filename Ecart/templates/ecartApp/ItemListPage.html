@@ -5,6 +5,7 @@
 {% block bodyblock %}
 
 
+
   <div class="jumbotron">
 
       {% for i in item %}
@@ -30,6 +31,9 @@
         </div>
           </form>
       {% endfor %}
+      <nav class="navbar navbar-dark bg-dark fixed-bottom" style=" align-items: center">
+        <a class="navbar-brand btn btn-info text-light" href="{% url 'ecartApp:selecteditempage' %}">Once you are done adding items, click me to go to your Cart!</a>
+      </nav>
 
 
   </div>
