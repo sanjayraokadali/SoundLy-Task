@@ -1,6 +1,7 @@
 from django import forms
 from ecartApp.models import QueryModel
 from django.contrib.auth.models import User
+from ecartApp.models import Cart
 
 
 
@@ -22,3 +23,12 @@ class UserForm(forms.ModelForm):
 
 
         fields = ('username','email','first_name','last_name','password')
+
+
+class CartForm(forms.ModelForm):
+
+    class Meta:
+
+        model = Cart
+
+        fields = ('item_name','item_price')

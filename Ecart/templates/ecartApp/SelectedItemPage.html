@@ -5,6 +5,10 @@
 
   <div class="jumbotron">
     <h2>Selected Items Page</h2>
+    <h3>Product List</h3>
+    {% for i in cart %}
+      <p> {{ i.item_name }}</p><br> <p> {{ i.item_price }} </p>
+    {% endfor %}
     <a class="btn btn-outline-danger" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
 
   </div>

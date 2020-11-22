@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from ecartApp import forms
 from ecartApp.forms import QueryModelForm
-from ecartApp.forms import UserForm
+from ecartApp.forms import UserForm, CartForm
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from ecartApp.models import GenerateItem
+from ecartApp.models import Cart
 
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
@@ -18,6 +19,21 @@ def HomePage(request):
 def ItemListPage(request):
 
     item = GenerateItem.objects.all()
+
+
+    if request.method == 'POST':
+
+        item_name = request.POST.get('product_name')
+        item_price = request.POST.get('product_price')
+
+        cart = Cart(item_name = item_name, item_price = item_price)
+
+        cart.save()
+
+        print('{} : {}'.format(item_name,item_price))
+
+        return HttpResponseRedirect(reverse('ecartApp:selecteditempage'))
+
 
     return render(request,'ecartApp/ItemListPage.html',{'item':item})
 
@@ -53,7 +69,9 @@ def ProductGallery(request):
 
 def SelectedItemPage(request):
 
-    return render(request,"ecartApp/SelectedItemPage.html")
+    cart = Cart.objects.all()
+
+    return render(request,"ecartApp/SelectedItemPage.html",{'cart':cart})
 
 def ThankYouPage(request):
 

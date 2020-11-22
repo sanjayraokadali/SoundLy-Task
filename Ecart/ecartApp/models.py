@@ -31,3 +31,12 @@ class GenerateItem(models.Model):
     def __str__(self):
 
         return self.item_name
+
+class Cart(models.Model):
+
+    item_name = models.CharField(max_length=30)
+    item_price = models.CharField(max_length=10)
+
+    def __str__(self):
+
+        return self.item_name

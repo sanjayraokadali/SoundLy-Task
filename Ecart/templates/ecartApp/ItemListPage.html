@@ -6,29 +6,34 @@
 
 
   <div class="jumbotron">
-    {% for i in item %}
 
 
-      <div class="card mb-3" style="max-width: 900px;">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <img src="{{ i.item_pic.url }}" class="card-img" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title" name="{{ i.item_name }}">{{ i.item_name }}</h5>
-              <p class="card-text product_price" name="{{ i.item_price }}" >Price: £{{ i.item_price }} </p>
-              <h6 class="card-text product_description">{{ i.item_description }}</h6>
-                <a href="{{ i.item_url }}" target="_blank" class="btn btn-outline-info">Check Out the Product</a>
+
+      {% for i in item %}
+        <form  method="POST">
+          {% csrf_token %}
+        <div class="card mb-3" style="max-width: 900px;">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="{{ i.item_pic.url }}" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ i.item_name }}</h5>
+                <input type="hidden" name="product_name" value="{{ i.item_name }}">
+                <p class="card-text"  >Price: £{{ i.item_price }} </p>
+                <input type="hidden" name="product_price" value="{{ i.item_price }}">
+                <h6 class="card-text product_description">{{ i.item_description }}</h6>
+                  <a href="{{ i.item_url }}" target="_blank" class="btn btn-outline-info">Check Out the Product</a>
+                    <input type="submit" class="btn btn-outline-dark bg-info" name="" value="Add to cart">
+              </div>
             </div>
           </div>
         </div>
-      </div>
+          </form>
+      {% endfor %}
 
 
-
-
-    {% endfor %}
   </div>
 
 {% endblock %}
