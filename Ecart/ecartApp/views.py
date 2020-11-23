@@ -143,6 +143,7 @@ def UserLoginPage(request):
     else:
 
         return render(request,"ecartApp/UserLoginPage.html",{})
+    
 
 
 def UserRegistrationPage(request):

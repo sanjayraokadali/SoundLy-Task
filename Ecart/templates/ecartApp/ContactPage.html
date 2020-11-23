@@ -30,7 +30,7 @@
       {% csrf_token %}
 
       {{form.as_p}}
-      <button type="submit" class="btn btn-danger" name="button">Submit</button>
+      <button type="submit" class="btn btn-danger query_button" name="button">Submit</button>
     </form>
 
   </div>
@@ -43,7 +43,7 @@
         <p></p>
         <p></p>
         Contact: <p></p>07896 543210
-        <p></p> 
+        <p></p>
         <p></p> Email: <p></p>Ecart@ecart.com
         <p></p>
 
@@ -55,10 +55,13 @@
   </div>
 </div>
 
-
-
-
-
-
   </div>
+
+  <script type="text/javascript">
+    $('.query_button').click(function(){
+
+      alert('THANK YOU FOR YOUR QUERY/FEEDBACK!')
+
+    })
+  </script>
 {% endblock %}

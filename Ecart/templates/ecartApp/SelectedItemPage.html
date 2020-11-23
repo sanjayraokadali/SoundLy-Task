@@ -15,9 +15,30 @@
           <input type="hidden" name="product_name" value="{{ i.item_name }}">
           <div class="card-body">
             <h6 class="card-title">Price : £{{ i.item_price }} : <p class="product_quantity">Quantity: {{ i.item_quantity }}</p></h6>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              Remove Item From Cart
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Remove Item From Cart?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    You may add it later when you wish to!!!
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <input type="submit" class=" remove_item btn btn-danger" name='' value="Remove From List">
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
-            <input type="submit" class=" remove_item btn btn-danger" name='' value="Remove From List">
           </div>
         </div>
 
@@ -51,5 +72,5 @@
     <a class="btn btn-outline-success bg-light text-dark" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
 
   </div>
-  
+
 {% endblock %}
