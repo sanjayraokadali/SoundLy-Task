@@ -14,13 +14,13 @@
 
   background-image: url('https://images.fineartamerica.com/images-medium-large-5/original-bold-colorful-abstract-painting-indecisive-by-madart-megan-duncanson.jpg');
   text-align: center;
-  border-style: ridge;
+  font-size: 20px;
+  border-style: groove;
   border-color: rgba(207, 164, 10,0.7);
   border-width: 10px;
-  font-family: 'Sail', cursive;
+  font-family: 'Abril Fatface', cursive;
   color: rgb(0,0,0);
-  border-top-left-radius: 100px;
-  border-bottom-right-radius: 70px;
+  border-radius: 70px;
   /* border-top-right-radius: 70px; */
 
 }
