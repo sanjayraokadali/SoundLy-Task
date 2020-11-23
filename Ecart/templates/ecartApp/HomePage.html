@@ -52,6 +52,30 @@ background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 }
+
+
+.fixed-bg4 {
+background-image: url("https://img.freepik.com/free-photo/shopping-bags-golden-shopping-cart_23-2148667038.jpg?size=626&ext=jpg");
+min-height: 100px;
+
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.fixed-bg5 {
+background-image: url("https://p0.pxfuel.com/preview/1013/721/141/contact-details-smartphone-business-contact-us.jpg");
+min-height: 400px;
+
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+
+
 </style>
 
 
@@ -67,6 +91,9 @@ background-size: cover;
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'ecartApp:homepage' %}">Home<span class="sr-only">(current)</span></a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'ecartApp:productgallery' %}">Product Gallery <span class="sr-only">(current)</span></a>
       </li>

@@ -1,5 +1,7 @@
 .homepage_bgimage{
   background-image: url('https://i.pinimg.com/originals/6e/e1/dc/6ee1dc8950385d849b823235fdd42313.jpg');
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 .jumbobgimage{
