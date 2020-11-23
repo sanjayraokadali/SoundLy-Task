@@ -155,7 +155,7 @@ def UserLoginPage(request):
             print('True')
             login(request,user)
 
-            return HttpResponseRedirect(reverse('homepage'))
+            return HttpResponseRedirect(reverse('ecartApp:homepage'))
         else:
             print('False')
             return HttpResponse('Invalid Details')
@@ -196,7 +196,7 @@ def user_logout(request):
 
     logout(request)
 
-    return HttpResponseRedirect(reverse('homepage'))
+    return HttpResponseRedirect(reverse('ecartApp:homepage'))
 
 def MyAccountPage(request):
 
