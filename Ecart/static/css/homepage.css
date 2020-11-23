@@ -17,9 +17,9 @@
   border-width: 10px;
   font-family: 'Sail', cursive;
   color: rgb(0,0,0);
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
-  border-bottom-left-radius: 100px;
+  border-top-left-radius: 100px;
+  border-bottom-right-radius: 70px;
+  /* border-top-right-radius: 70px; */
 
 }
 
