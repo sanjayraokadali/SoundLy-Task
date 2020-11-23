@@ -6,6 +6,7 @@ app_name = "ecartApp"
 urlpatterns = [
 
     # url(r'$%',views.HomePage,name='homepage'),
+    url(r'^$',views.HomePage,name='homepage'),
     url(r'^AboutPage/$',views.AboutPage,name='aboutpage'),
     url(r'^ItemListPage/$',views.ItemListPage,name='itemlistpage'),
     url(r'^ContactPage/$',views.ContactPage,name='contactpage'),

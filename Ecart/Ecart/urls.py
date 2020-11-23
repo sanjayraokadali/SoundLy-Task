@@ -24,8 +24,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$',views.HomePage,name='homepage'),
-    url(r'^Homepage/',include('ecartApp.urls')),
+    url(r'^$',views.BasePage,name='basepage'),
+    url(r'^HomePage/',include('ecartApp.urls')),
     url(r'^Logout/',views.user_logout,name='logout'),
 
 ]

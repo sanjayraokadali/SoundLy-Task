@@ -24,13 +24,19 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
+
+<style media="screen">
+
+</style>
+
+
 </head>
 
 
 <body class="homepage_bgimage">
 
   <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{% url 'homepage' %}">Ecart Shopping Hub</a>
+  <a class="navbar-brand" href="{% url 'basepage' %}">E-Cart</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,29 +48,6 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'ecartApp:itemlistpage' %}">Item List <span class="sr-only">(current)</span></a>
       </li>
-      <div class="dropdown">
-
-          <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Product Category
-          </a>
-
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <div class="btn-group dropright">
-              <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropright
-              </button>
-              <div class="dropdown-menu">
-                <!-- Dropdown menu links -->
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-      </div>
-
-      </li>
 
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'ecartApp:aboutpage' %}">About Us<span class="sr-only">(current)</span></a>
@@ -73,7 +56,7 @@
 
       <li class="nav-item dropdown">
         <div class="dropdown">
-          <a class="nav-link dropdown-toggle btn btn-outline-success btn-md" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle btn btn-outline-dark text-warning btn-md" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Welcome {{ user.first_name }} !
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -118,6 +101,18 @@
   {% block bodyblock %}
   <div class="jumbotron jumbobgimage">
   <h1 class="display-4 WelcomeLine">Welcome to E-cart Purchase with a Snap! </h1>
+
+  <div class="container " style="height: 100%;  margin: 0;  font-family: Arial, Helvetica, sans-serif;" >
+    <div class="bg-image img1"></div>
+    <div class="bg-image img2"></div>
+    <div class="bg-image img3"></div>
+    <div class="bg-image img4"></div>
+    <div class="bg-image img5"></div>
+    <div class="bg-image img6"></div>
+
+    <div class="bg-text">E-CART</div>
+
+  </div>
 
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 <ol class="carousel-indicators">
@@ -174,11 +169,54 @@
   </div>
 </div>
 
+<div class="card text-white bg-dark mb-3 ">
+  <img src="\media\item_pics\keyboard.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Are you a Gamer?</h5>
+    <p class="card-text">Find exiciting deals on gamin accessories and a lot more at E-Cart!</p>
+    <p class="card-text"><small class="text-muted">Mechanical Keyboard</small></p>
 
-<a class="btn btn-outline-dark btn-lg" href="{% url 'ecartApp:aboutpage' %}" role="button">Explore!</a>
-
+  </div>
 </div>
 
+<div class="card-group">
+  <div class="card text-white bg-dark mb-3">
+    <img src="https://image.freepik.com/free-photo/pretty-young-stylish-sexy-woman-pink-luxury-dress-summer-fashion-trend-chic-style-sunglasses-blue-studio-background-shopping-holding-paper-bags-talking-mobile-phone-shopaholic_285396-2957.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Fashion!</h5>
+      <p class="card-text">Fashion design is the art of applying design, aesthetics and natural beauty to clothing and its accessories. It is influenced by cultural and social attitudes,</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Fashion!</small>
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <img src="https://www.giftsicle.com/wp-content/uploads/2019/07/charging-station-for-multiple-devices-2019-2020.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Trend!</h5>
+      <p class="card-text">Here are the best smartphones on the market today. From the iPhone 11 Pro to the OnePlus 8 Pro; if you're shopping for a new phone</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Phones</small>
+    </div>
+  </div>
+  <div class="card text-white bg-dark mb-3">
+    <img src="https://static.mubasher.info/File.Story_Image/245e25adb4a221d97a4b72d97cb43a8d/640.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Luxury!</h5>
+      <p class="card-text">This year has seen its fair share of luxury products, with the most significant contribution being the auto market. 2012 saw numerous cars being designed </p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Luxury!</small>
+    </div>
+  </div>
+</div>
+
+
+
+<a class="btn btn-warning btn-lg" href="{% url 'ecartApp:aboutpage' %}" role="button">Explore!</a>
+
+</div>
 
   {% endblock %}
 

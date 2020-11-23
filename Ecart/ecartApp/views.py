@@ -13,6 +13,11 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def BasePage(request):
+
+    return render(request,'ecartApp/BasePage.html')
+
+
 def HomePage(request):
 
     return render(request,'ecartApp/HomePage.html')
