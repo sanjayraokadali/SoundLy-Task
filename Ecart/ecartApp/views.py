@@ -56,11 +56,15 @@ def ItemListPage(request):
 @login_required
 def PaymentPage(request):
 
-    cart = Cart.objects.all()
 
-    cart.delete()
 
-    return render(request,'ecartApp/PaymentPage.html')
+    del_cart = Cart.objects.all()
+
+    cart = del_cart
+
+    del_cart.delete()
+
+    return render(request,'ecartApp/PaymentPage.html',{'cart':cart})
 
 def AboutPage(request):
 
@@ -106,7 +110,19 @@ def SelectedItemPage(request):
 
 def ThankYouPage(request):
 
-    return render(request,"ecartApp/ThankYouPage.html")
+    if request.method == 'POST':
+
+        order_email = request.POST.get('order_email')
+        order_add1 = request.POST.get('order_add1')
+        order_city = request.POST.get('order_city')
+        order_zip = request.POST.get('order_zip')
+        order_number = request.POST.get('order_number')
+
+        order_list = [order_email,order_number,order_add1,order_city,order_zip]
+
+
+
+    return render(request,"ecartApp/ThankYouPage.html",context ={'order_list':order_list})
 
 def TotalBillPage(request):
 
@@ -117,8 +133,6 @@ def TotalBillPage(request):
     for price in cart:
 
         sum += float(price.item_price) * price.item_quantity
-
-
 
 
     return render(request,'ecartApp/TotalBillPage.html',{'cart':cart,'total':sum})
@@ -143,7 +157,7 @@ def UserLoginPage(request):
     else:
 
         return render(request,"ecartApp/UserLoginPage.html",{})
-    
+
 
 
 def UserRegistrationPage(request):

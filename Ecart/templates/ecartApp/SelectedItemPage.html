@@ -45,6 +45,8 @@
       </form>
 
     {% endfor %}
+    
+    <a class="btn btn-outline-success bg-light text-dark" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
 
     {% else %}
       <div class="container" style=" align-items: center; ">
@@ -69,7 +71,7 @@
 
 
     <a href="{% url 'ecartApp:itemlistpage' %}" class="btn btn-outline-info bg-light text-dark">Shop More!</a>
-    <a class="btn btn-outline-success bg-light text-dark" href="{% url 'ecartApp:totalbillpage' %}">Make a payment</a>
+
 
   </div>
 

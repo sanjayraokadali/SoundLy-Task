@@ -6,7 +6,21 @@
   <div class="jumbotron">
       <div class="container">
         <h2>Thank You for shopping with us!</h2>
-        <a href="{% url 'homepage' %}">Go Back Home!</a>
+
+          <div class="jumbotron">
+            <h4>The Item will be shipped to the follwing adddress!</h4>
+            <h6>The delivery is estimated to take upto 2-3 Business Days</h6>
+            <h6> <strong> DELVIERY ADDRESS </strong> </h6>
+            <ul class="list-group">
+              {% for i in order_list %}
+            <li class="list-group-item">{{ i }}</li>
+              {% endfor %}
+            </ul>
+
+          </div>
+
+          <h5>Thank you for shopping at E-Cart</h5>
+        <a href="{% url 'homepage' %}" class="btn btn-info">Shop More? Click ME</a>
       </div>
 
   </div>

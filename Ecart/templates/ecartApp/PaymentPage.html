@@ -6,8 +6,42 @@
 
   <div class="jumbotron">
     <div class="container">
-      <h2>Payment Page</h2>
-      <a href="{% url 'ecartApp:thankyoupage' %}" class="btn btn-outline-success total_to_pay">Pay</a>
+      <h2>Welcome to our Payment portal!</h2>
+      <h3>Please provide us the following details to proceed with payment and shipping</h3>
+      <form action="{% url 'ecartApp:thankyoupage' %}" method="POST">
+
+        {% csrf_token %}
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" name='order_email' id="inputEmail4">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="inputPassword4">Contact Number</label>
+            <input type="text" class="form-control" id="inputPassword4" name='order_number'>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputAddress">Address Line 1</label>
+          <input type="text" class="form-control" id="inputAddress" name='order_add1' placeholder="1234 Main St">
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" name='order_city' id="inputCity">
+          </div>
+
+          <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" name='order_zip' id="inputZip">
+          </div>
+        </div>
+        <input type="submit" class="btn btn-outline-success total_to_pay" value="Pay!">
+
+      </form>
+
     </div>
 
   </div>
@@ -20,6 +54,5 @@
 
     })
   </script>
-
 
 {% endblock %}
