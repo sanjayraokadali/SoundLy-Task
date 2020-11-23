@@ -34,7 +34,10 @@ body, html {
 .img4 { background-image: url("https://cdn.mos.cms.futurecdn.net/DUbwxwvAbe6HaRLaVcbm7b.jpg"); }
 .img5 { background-image: url("https://wallpaperaccess.com/full/2489629.jpg"); }
 .img6 { background-image: url("https://pixelz.cc/wp-content/uploads/2018/12/diesel-watch-uhd-4k-wallpaper.jpg"); }
-
+.img7 { background-image: url("https://mygolfspy-wp-uploads.s3.amazonaws.com/uploads/2018/05/ManSwingingaClub.jpg"); }
+.img8 { background-image: url("https://www.rollingstone.com/wp-content/uploads/2020/02/best-4k-projector.jpg?resize=1800,1200&w=1800"); }
+.img9 { background-image: url("https://miro.medium.com/max/2596/1*CEGYsXfLJR5mHtjOAwDnmw.jpeg"); }
+.img10 { background-image: url("https://cdn.hipwallpaper.com/i/80/94/eZtT4l.jpg"); }
 /* Position text in the middle of the page/image */
 .bg-text {
   background-color: rgb(0,0,0); /* Fallback color */
@@ -70,6 +73,20 @@ body, html {
   padding: 20px;
   text-align: center;
 }
+
+a:link, a:visited {
+  background-color:  rgba(3, 194, 252, 0.5);
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: rgba(3, 194, 252, 0.5);
+
+
 </style>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -84,11 +101,14 @@ body, html {
 <div class="bg-image img4"></div>
 <div class="bg-image img5"></div>
 <div class="bg-image img6"></div>
+<div class="bg-image img7"></div>
+<div class="bg-image img8"></div>
+<div class="bg-image img9"></div>
+<div class="bg-image img10"></div>
 
 <div class="bg-text">Welcome to E-Cart <br>
   We Study Your Buyings
-  <a class="btn btn-outlint-dark" href="{% url 'ecartApp:homepage' %}">Visit!</a>
-
+  <a href="{% url 'ecartApp:homepage' %}" target="_blank">Vist E-Cart</a>
 </div>
 
 
